@@ -1,6 +1,6 @@
 {
   "name": "with-gestures",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An HOC enabling your component to easily react to any gestures (dragging, pinch-to-zoom etc.)",
   "main": "build/index.js",
   "scripts": {
