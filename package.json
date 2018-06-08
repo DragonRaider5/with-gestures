@@ -30,6 +30,9 @@
     "url": "https://github.com/DragonRaider5/with-gestures/issues"
   },
   "homepage": "https://github.com/DragonRaider5/with-gestures#readme",
+  "files": [
+    "build/**"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
