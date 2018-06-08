@@ -2,11 +2,11 @@
   "name": "with-gestures",
   "version": "0.1.0",
   "description": "An HOC enabling your component to easily react to any gestures (dragging, pinch-to-zoom etc.)",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "scripts": {
     "start": "npm run development",
     "development": "parcel --no-autoinstall example/index.html",
-    "build": "rimraf build && babel src/index.js -d build",
+    "build": "rimraf build && babel src -d build",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
