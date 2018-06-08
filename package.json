@@ -1,0 +1,49 @@
+{
+  "name": "with-gestures",
+  "version": "0.0.0",
+  "description": "An HOC enabling your component to easily react to any gestures (dragging, pinch-to-zoom etc.)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run development",
+    "development": "parcel --no-autoinstall example/index.html",
+    "build": "rimraf build && babel src/index.js -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DragonRaider5/with-gestures.git"
+  },
+  "keywords": [
+    "react",
+    "gesture",
+    "gestures",
+    "hoc",
+    "pinch-to-zoom",
+    "drag",
+    "touch",
+    "dragging"
+  ],
+  "author": "DragonRaider5 <marces.engel@googlemail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DragonRaider5/with-gestures/issues"
+  },
+  "homepage": "https://github.com/DragonRaider5/with-gestures#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "normalize.css": "^8.0.0",
+    "parcel-bundler": "^1.8.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "rimraf": "^2.6.2",
+    "styled-components": "^3.3.2"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8",
+    "invariant": "^2.2.4"
+  }
+}
