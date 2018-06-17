@@ -16,3 +16,4 @@ export {
 
 export { default as PanResponder } from './responders/PanResponder.js'
 export { default as RotationResponder } from './responders/RotationResponder.js'
+export { default as PinchResponder } from './responders/PinchResponder.js'
