@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.8",
-    "invariant": "^2.2.4"
+    "invariant": "^2.2.4",
+    "uuid": "^3.2.1"
   }
 }
