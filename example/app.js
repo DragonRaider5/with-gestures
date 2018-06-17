@@ -1,15 +1,76 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import withGestures from '../src/index.js'
+import { withGestures, CombineResponders, PanResponder, PinchResponder } from '../src/index.js'
 
-const WrappedComponent = ({ setWithGestureRef, pan }) => (
-  <GestureResponder style={{
-    transform: pan && `translate(${pan.deltaX || 0}px, ${pan.deltaY || 0}px)`
-  }} innerRef={setWithGestureRef}> { /* innerRef needed to bypass styled-components, normally it'd only be ref */ }
-    withGestures
-  </GestureResponder>
-)
+class WrappedComponent extends React.PureComponent {
+  state = {
+    scale: 1,
+    deltaScale: 1,
+    x: 0,
+    y: 0,
+    deltaX: 0,
+    deltaY: 0
+  }
+
+  handlePan = ({ deltaX, deltaY }) => {
+    this.setState({
+      deltaX,
+      deltaY
+    })
+  }
+
+  handlePanEnd = ({ deltaX, deltaY }) => {
+    this.setState((prevState) => ({
+      x: prevState.x + deltaX,
+      y: prevState.y + deltaY,
+      deltaX: 0,
+      deltaY: 0
+    }))
+  }
+
+  handlePinch = ({ scale }) => {
+    // console.log(scale)
+    this.setState({
+      deltaScale: scale
+    })
+  }
+
+  handlePinchEnd = ({ scale }) => {
+    this.setState((prevState) => ({
+      scale: prevState.scale * scale,
+      deltaScale: 1
+    }), () => console.log(this.state))
+  }
+
+  getStyle = () => {
+    const x = this.state.x + this.state.deltaX
+    const y = this.state.y + this.state.deltaY
+    const scale = this.state.scale * this.state.deltaScale
+
+    return {
+      transform: `translate(${x}px, ${y}px) scale(${scale})`
+    }
+  }
+
+  render () {
+    const { setWithGestureRef } = this.props // injected by withGestures
+
+    return (
+      <GestureResponder
+        innerRef={setWithGestureRef /* innerRef needed to bypass styled-components, normaly it'd only be ref */}
+        style={this.getStyle()}
+      >
+        withGestures
+
+        <CombineResponders>
+          <PinchResponder onEvent={this.handlePinch} onEnd={this.handlePinchEnd} />
+          <PanResponder onEvent={this.handlePan} onEnd={this.handlePanEnd} />
+        </CombineResponders>
+      </GestureResponder>
+    )
+  }
+}
 
 const options = {
   pinch: {
