@@ -15,3 +15,4 @@ export {
 } from 'hammerjs'
 
 export { default as PanResponder } from './responders/PanResponder.js'
+export { default as RotationResponder } from './responders/RotationResponder.js'
