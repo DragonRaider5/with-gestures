@@ -72,14 +72,7 @@ class WrappedComponent extends React.PureComponent {
   }
 }
 
-const options = {
-  pinch: {
-    enable: true
-  },
-  pan: {
-    enable: true
-  }
-}
+const options = {}
 
 const Component = withGestures(options)(WrappedComponent)
 
