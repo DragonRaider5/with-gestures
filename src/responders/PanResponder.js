@@ -1,5 +1,5 @@
 import React from 'react'
-import Hammer from 'hammerjs'
+import Hammer, { DIRECTION_ALL } from 'hammerjs'
 
 import Responder, { withHammerManager } from './Responder.js'
 import { createPropWhiteLister } from '../utils.js'
@@ -26,9 +26,9 @@ class PanResponder extends Responder {
 
   getRecognizerOptions = () => {
     const {
-      threshold,
-      direction,
-      minPointers
+      threshold = 1,
+      direction = DIRECTION_ALL,
+      minPointers = 1
     } = this.props
 
     return {

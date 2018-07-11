@@ -1,5 +1,5 @@
 import React from 'react'
-import Hammer from 'hammerjs'
+import Hammer, { DIRECTION_ALL } from 'hammerjs'
 
 import Responder, { withHammerManager } from './Responder.js'
 import { createPropWhiteLister } from '../utils.js'
@@ -28,10 +28,10 @@ class PinchResponder extends Responder {
 
   getRecognizerOptions = () => {
     const {
-      threshold,
-      velocity,
-      direction,
-      minPointers
+      threshold = 10,
+      velocity = 0.3,
+      direction = DIRECTION_ALL,
+      minPointers = 1
     } = this.props
 
     return {
