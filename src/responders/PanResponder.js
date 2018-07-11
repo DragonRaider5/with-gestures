@@ -2,12 +2,7 @@ import React from 'react'
 import Hammer from 'hammerjs'
 
 import Responder, { withHammerManager } from './Responder.js'
-import {
-  callIfDefined,
-  createPropWhiteLister,
-  areShallowEqual,
-  createDidChange
-} from '../utils.js'
+import { createPropWhiteLister } from '../utils.js'
 
 const whiteListEventProps = createPropWhiteLister([
   'deltaX',
