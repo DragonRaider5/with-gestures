@@ -2,8 +2,8 @@ import React from 'react'
 
 import Provider from './Provider.js'
 
-export default (options = {}) => (WrappedComponent) => (props) => (
+export default (options = { propName: 'setWithGestureRef' }) => (WrappedComponent) => (props) => (
   <Provider {...options}>
-    {(setWithGestureRef) => <WrappedComponent setWithGestureRef={setWithGestureRef} {...props} />}
+    {(setWithGestureRef) => <WrappedComponent {...{ [options.propName]: setWithGestureRef }} {...props} />}
   </Provider>
 )
