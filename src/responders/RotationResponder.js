@@ -21,7 +21,15 @@ class RotationResponder extends Responder {
   }
 
   getRecognizerOptions = () => {
-    return {}
+    const {
+      threshold,
+      minPointers
+    } = this.props
+
+    return {
+      threshold,
+      pointers: minPointers
+    }
   }
 
   makeExposableEvent = (event) => {
