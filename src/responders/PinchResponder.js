@@ -21,7 +21,15 @@ class PinchResponder extends Responder {
   }
 
   getRecognizerOptions = () => {
-    return {}
+    const {
+      threshold,
+      minPointers
+    } = this.props
+
+    return {
+      threshold,
+      pointers: minPointers
+    }
   }
 
   // mutateEvent = (event) => {
