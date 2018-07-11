@@ -30,7 +30,17 @@ class PanResponder extends Responder {
   }
 
   getRecognizerOptions = () => {
-    return {}
+    const {
+      threshold,
+      direction,
+      minPointers
+    } = this.props
+
+    return {
+      threshold,
+      direction,
+      pointers: minPointers
+    }
   }
 
   makeExposableEvent = (event) => whiteListEventProps(event)
