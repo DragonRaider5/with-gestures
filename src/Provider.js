@@ -19,7 +19,6 @@ export default class GestureProvider extends React.Component {
       'to the component which withGestures should detect gestures for.'
     )
 
-    console.log(this.startupRecognizers)
     this.hammer = new Manager(this.child, {
       touchAction: 'compute',
       recognizers: this.startupRecognizers
