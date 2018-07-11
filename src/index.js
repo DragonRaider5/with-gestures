@@ -3,6 +3,7 @@ export {
   default as GestureProvider,
   Consumer
 } from './Provider.js'
+
 export {
   DIRECTION_NONE,
   DIRECTION_LEFT,
@@ -19,3 +20,4 @@ export { default as CombineResponders } from './responders/CombineResponders.js'
 export { default as PanResponder } from './responders/PanResponder.js'
 export { default as RotationResponder } from './responders/RotationResponder.js'
 export { default as PinchResponder } from './responders/PinchResponder.js'
+export { default as SwipeResponder } from './responders/SwipeResponder.js'
