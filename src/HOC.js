@@ -6,8 +6,8 @@ const defaultOptions = {
   propName: 'setWithGestureRef'
 }
 
-export default ({ propName, ...options } = defaultOptions) => (WrappedComponent) => (props) => (
+export default ({ propName, ...options } = defaultOptions) => (WrappedComponent) => React.forwardRef((props, ref) => (
   <Provider {...options}>
-    {(setWithGestureRef) => <WrappedComponent {...{ [propName]: setWithGestureRef }} {...props} />}
+    {(setWithGestureRef) => <WrappedComponent {...{ [propName]: setWithGestureRef }} ref={ref} {...props} />}
   </Provider>
-)
+))
